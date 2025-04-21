@@ -3,7 +3,7 @@ title: "Accueil"
 output: html_document
 ---
 
-<img src="logo.jpeg" alt="Logo" width="100" style="float:right; margin: 10px;" />
+<img src="logo.jpg" alt="Logo" width="100" style="float:right; margin: 10px;" />
 
 # Projet SIG : Climat & Végétation en Banlieue Parisienne
 
