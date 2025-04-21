@@ -1,0 +1,51 @@
+---
+title: "Analyse"
+output: html_document
+---
+
+```{r setup, message=FALSE}
+library(sf)
+library(dplyr)
+library(tmap)
+library(ggplot2)
+
+# Exemple : à modifier avec vos fichiers réels
+communes <- st_read("data/communes.shp")
+lc_zones <- st_read("data/lcz.shp")
+
+tmap_mode("plot")
+tm_shape(communes) +
+  tm_borders() +
+  tm_shape(lc_zones) +
+  tm_fill("indice_chaleur", palette="YlOrRd", title="Chaleur")
+
+x <- c(10, 20, 30, 40)
+y <- c(25, 22, 20, 18)
+plot(x, y, type="b", main="Plus de végétation = moins de chaleur", xlab="Taux de végétation (%)", ylab="Température (°C)")
+
+
+   - Enregistre sous **`analyse.Rmd`**
+
+---
+
+5. 🔹 **Créer `conclusion.Rmd` :**
+   - Encore une fois, même méthode :
+
+```markdown
+---
+title: "Conclusion"
+output: html_document
+---
+
+# Conclusion
+
+Les résultats confirment que :
+- Une **plus grande densité de végétation** est associée à **des températures plus faibles**
+- Les zones **bâties denses et imperméables** concentrent les **îlots de chaleur**
+
+## Recommandations
+
+- Renforcer la **végétalisation des espaces publics**
+- Cibler les **quartiers vulnérables**
+- Étendre cette approche à d'autres périodes ou communes
+
