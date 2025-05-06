@@ -10,6 +10,30 @@ output: html_document
 Ce site présente une étude SIG portant sur le lien entre **végétation** et **îlots de chaleur urbains** dans trois communes contrastées :  
 **Clamart**, **Gennevilliers** et **Le Châtelet-en-Brie**.
 
+```{r carte-interactive-idf, echo=FALSE}
+```{r setup, include=FALSE}
+library(sf)
+library(dplyr)
+library(leaflet)
+
+
+# Charger les communes d’Île-de-France (ex: fichier déjà filtré ou shapefile léger)
+idf <- st_read("communes-france.geojson")
+
+# Charger les 3 communes étudiées (si tu les as déjà filtrées)
+selection <- idf %>%
+  filter(com_name_upper %in% c("CLAMART", "GENNEVILLIERS", "LE CHÂTELET-EN-BRIE"))
+
+# Créer la carte interactive
+leaflet() %>%
+  addTiles() %>%  # fond de carte OpenStreetMap
+  addPolygons(data = idf, color = "gray", weight = 0.5, fillOpacity = 0.2, label = ~com_name_upper) %>%
+  addPolygons(data = selection, color = "blue", fillColor = "skyblue", weight = 2,
+              label = ~com_name_upper, highlightOptions = highlightOptions(weight = 3, color = "navy", bringToFront = TRUE)) %>%
+  addLabelOnlyMarkers(data = st_centroid(selection), label = ~com_name_upper,
+                      labelOptions = labelOptions(noHide = TRUE, direction = "bottom", textOnly = TRUE))
+```
+
 ## Problématique
 
 **Comment la couverture végétale agit-elle sur les températures urbaines, et comment contribue-t-elle à créer des îlots de fraîcheur ?**
