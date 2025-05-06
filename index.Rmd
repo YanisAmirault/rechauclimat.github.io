@@ -16,26 +16,18 @@ Ce site présente une étude SIG portant sur le lien entre **végétation** et *
 ```{r carte-interactive-idf, echo=FALSE, message=FALSE, warning=FALSE, results='asis'}
 library(sf)
 library(dplyr)
-library(leaflet)
+library(tmap)
+tmap_mode("view")
 
-# Charger le fichier GeoJSON (adapté à ton chemin réel)
 idf <- st_read("communes-france.geojson", quiet = TRUE)
-
-# Vérifie les colonnes
-# names(idf)
-
-# Sélection des 3 communes
 selection <- idf %>%
   dplyr::filter(com_name_upper %in% c("CLAMART", "GENNEVILLIERS", "LE CHÂTELET-EN-BRIE"))
 
-map <- leaflet() %>%
-  addTiles() %>%
-  addPolygons(data = idf, color = "lightgray", weight = 0.5, fillOpacity = 0.2, label = ~com_name_upper) %>%
-  addPolygons(data = selection, color = "blue", fillColor = "skyblue", weight = 2) %>%
-  addLabelOnlyMarkers(data = st_centroid(selection), label = ~com_name_upper,
-                      labelOptions = labelOptions(noHide = TRUE, direction = "bottom", textOnly = TRUE))
-
-print(map)
+tm_shape(idf) +
+  tm_borders(col = "lightgray", lwd = 0.2) +
+  tm_shape(selection) +
+  tm_fill(col = "blue", lwd = 2) +
+  tm_text("com_name_upper", size = 0.7)
 ```
 
 ## Problématique
