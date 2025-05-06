@@ -24,14 +24,14 @@ selection <- idf %>%
   filter(com_name_upper %in% c("CLAMART", "GENNEVILLIERS", "LE CHÂTELET-EN-BRIE"))
 
 # Créer la carte interactive
-map <- leaflet() %>%
+leaflet() %>%
   addTiles() %>%  # fond de carte OpenStreetMap
   addPolygons(data = idf, color = "gray", weight = 0.5, fillOpacity = 0.2, label = ~com_name_upper) %>%
   addPolygons(data = selection, color = "blue", fillColor = "skyblue", weight = 2,
               label = ~com_name_upper, highlightOptions = highlightOptions(weight = 3, color = "navy", bringToFront = TRUE)) %>%
   addLabelOnlyMarkers(data = st_centroid(selection), label = ~com_name_upper,
                       labelOptions = labelOptions(noHide = TRUE, direction = "bottom", textOnly = TRUE))
-print(map)
+
 ```
 
 ## Problématique
