@@ -1,0 +1,12 @@
+---
+title: "Carte interactive test"
+output:
+  html_document:
+    self_contained: true
+---
+
+library(leaflet)
+
+leaflet() %>%
+  addTiles()
+
