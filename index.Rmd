@@ -12,7 +12,7 @@ library(dplyr)
 tmap_mode("view")
 
 # Charger les données
-idf <- st_read("communes-france.geojson")  # adapte le chemin si besoin
+idf <- st_read("communes-france.geojson", quiet = TRUE)  # adapte le chemin si besoin
 
 # Extraire Paris (fusion des arrondissements)
 paris <- idf %>%
@@ -32,7 +32,7 @@ ma_carte <- tm_shape(idf) +
   tm_borders(col = "darkred", lwd = 2) +
 
   tm_shape(selection) +
-  tm_fill(col = "skyblue", popup.vars = "com_name_upper") +
+  tm_fill(col = "skyblue", alpha = 0.8,popup.vars = "com_name_upper") +
   tm_borders(col = "darkblue", lwd = 2) +
 
   tm_layout(main.title = "Communes étudiées et Paris",
