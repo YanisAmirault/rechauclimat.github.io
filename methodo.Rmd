@@ -1,5 +1,5 @@
 ---
-title: "Méthodologie"
+title: 
 output: html_document
 ---
 
@@ -27,28 +27,64 @@ vege <- tm_shape(espaces_verts) +
 tmap_save(vege, filename = "docs/carte_vege.html")
 ```
 
-# Données utilisées
+# Méthodologie
 
-- **Occupation du sol** (MOS Île-de-France) pour cartographier la végétation 
+## 🧭 Objectif de l’étude
 
-<iframe src="carte_vege.html" width="100%" height="600px" frameborder="0"></iframe>
+Cette étude vise à mieux comprendre comment la **couverture végétale**, la **structure urbaine** et la **composition sociale** des territoires influencent leur exposition aux **îlots de chaleur urbains**.
 
-- **Zones climatiques locales (LCZ)** pour repérer les îlots de chaleur
+---
 
-<iframe src="https://www.arcgis.com/apps/instant/portfolio/index.html?appid=ff73f22b99c74d009e0882aa2aff3149" width="120%" height="600px" frameborder="0" allowfullscreen></iframe>
+## 📥 Données mobilisées
 
-- **Contours communaux** (Admin Express)
+| Jeu de données                 | Description                                   | Source                      | Format   |
+|--------------------------------|-----------------------------------------------|-----------------------------|----------|
+| `communes-france.geojson`      | Limites administratives                       | data.gouv.fr                | GeoJSON  |
+| `occupation-du-sol.geojson`    | Espaces verts et zones bâties                 | Institut Paris Region (MOS) | GeoJSON  |
+| `ilot-de-chaleur.geojson`      | Indicateurs climatiques et sociaux            | Institut Paris Region       | GeoJSON  |
 
-# Outils & Packages
+---
 
-- `sf` : manipulation des données spatiales  
-- `dplyr` : analyse des tableaux  
-- `tmap` et `ggplot2` : cartographie  
-- `rmarkdown` : publication en ligne
+## 🧪 Méthode de traitement
 
-# Étapes
+- Sélection des **3 communes cibles** (Clamart, Gennevilliers, Le Châtelet-en-Brie)
+- Extraction par **intersection spatiale** des zones végétalisées et des couches climatiques
+- Export des cartes au format `.html` pour intégration sur ce site
 
-1. Import des shapefiles  
-2. Filtrage par commune  
-3. Croisement entre végétation et intensité thermique  
-4. Génération des cartes et analyses graphiques
+---
+
+## 🗺️ Carte interactive : îlots de chaleur et vulnérabilité (source tierce)
+
+Cette carte interactive, issue de l'Institut Paris Region, illustre la distribution des îlots de chaleur et les indices de vulnérabilité en Île-de-France.
+
+<div style="text-align: center;">
+<iframe src="https://lien-de-ta-carte-externe.fr" width="100%" height="600px" style="border:none; border-radius: 10px; box-shadow: 0 0 8px rgba(0,0,0,0.1);"></iframe>
+</div>
+
+---
+
+## 🗺️ Carte interactive : végétation et occupation du sol
+
+Voici la répartition des espaces verts identifiés dans la région francilienne, à partir de la couche MOS.
+
+<div style="text-align: center;">
+<iframe src="carte-vegetation-region.html" width="100%" height="600px" style="border:none; border-radius: 10px; box-shadow: 0 0 8px rgba(0,0,0,0.1);"></iframe>
+</div>
+
+---
+
+## 🧰 Outils utilisés
+
+L’ensemble du traitement a été effectué sous **RStudio**, à l’aide des bibliothèques suivantes :
+
+- `sf` → lecture et traitement des géométries
+- `tmap` → cartographie interactive
+- `dplyr` → manipulation des données attributaires
+- `rmarkdown` → génération du site web
+
+---
+
+## ✅ Conclusion
+
+La méthodologie adoptée assure la robustesse des croisements spatiaux entre climat, végétation et population.  
+Les cartes ci-dessus servent de base à l’analyse communale détaillée présentée dans la suite du site.
