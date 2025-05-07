@@ -3,10 +3,58 @@ title: "Méthodologie"
 output: html_document
 ---
 
+```{r carte-interactive, echo=FALSE, message=FALSE, warning=FALSE}
+library(tmap)
+library(sf)
+library(dplyr)
+
+tmap_mode("view")
+
+climat <- st_read("ilots-de-chaleur-urbains-icu-classification-des-imu-en-zone-climatique-locale-lc 2.geojson", quiet = TRUE)
+
+carte_climat <- tm_shape(climat) +
+  tm_fill(col = "flux_chale", palette = "YlOrRd", title = "Flux de chaleur", style = "quantile", popup.vars = c("flux_chale")) +
+  tm_borders(col = "white", lwd = 0.2) +
+  tm_layout(legend.outside = TRUE,
+            main.title = "îlots de chaleur en Île-de-France",
+            main.title.size = 1.1)
+
+tmap_save(carte_climat, filename = "docs/carte_climat.html")
+
+```
+
+```{r carte-interactive, echo=FALSE, message=FALSE, warning=FALSE}
+library(sf)
+library(tmap)
+library(dplyr)
+
+tmap_mode("view")
+
+sol <- st_read("occupation-du-sol-en-5-postes-1994-mos-simplifie-saisi-au-150000-dile-de-france.geojson", quiet = TRUE)
+
+espaces_verts <- sol %>%
+  filter(codzon %in% c("2"))
+
+tm_shape(espaces_verts) +
+  tm_fill( col = "darkgreen", alpha = 0.5, popup.vars = "codzon") +
+  tm_borders(col = "white", lwd = 0.2) +
+  tm_layout(
+    main.title = "Espaces végétalisés en Île-de-France",
+    main.title.size = 1.1,
+    legend.outside = TRUE
+  )
+```
+
 # Données utilisées
 
-- **Occupation du sol** (MOS Île-de-France) pour cartographier la végétation  
-- **Zones climatiques locales (LCZ)** pour repérer les îlots de chaleur  
+- **Occupation du sol** (MOS Île-de-France) pour cartographier la végétation 
+
+
+
+- **Zones climatiques locales (LCZ)** pour repérer les îlots de chaleur
+
+<iframe src="carte_climat.html" width="100%" height="600px" frameborder="0"></iframe>
+
 - **Contours communaux** (Admin Express)
 
 # Outils & Packages

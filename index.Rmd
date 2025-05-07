@@ -24,8 +24,7 @@ selection <- idf %>%
 
 # Construire la carte
 ma_carte <- tm_shape(idf) +
-  tm_borders(col = "lightgray", lwd = 0.4) +
-  tm_fill(col = "white", alpha = 0.01, popup.vars = "com_name_upper") +
+  tm_fill(col = "lightgrey", alpha = 0.8, popup.vars = "com_name_upper") +
 
   tm_shape(paris) +
   tm_fill(col = "red", alpha = 0.8, popup.vars = "com_name_upper") +
