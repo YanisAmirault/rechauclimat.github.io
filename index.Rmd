@@ -27,7 +27,7 @@ paris <- idf %>%
   dplyr::filter(com_name_upper %in% c("PARIS"))
 
 # 2. Carte complète
-tm_shape(idf) +
+carte_inte <- tm_shape(idf) +
   tm_borders(col = "lightgray", lwd = 0.4) +
   tm_fill(col = "white", alpha = 0.01, popup.vars = "com_name_upper") +
 
@@ -41,7 +41,16 @@ tm_shape(selection) +
 
 tm_layout(main.title = "Localisation des communes étudiées",
           main.title.size = 1.2)
+
+tmap_save(carte_inte, "docs/carte_interactive.html")
+
 ```
+# Carte interactive
+
+Voici la carte interactive des communes étudiées :
+
+<iframe src="carte_interactive.html" width="100%" height="600px" frameborder="0"></iframe>
+
 
 ## Problématique
 
