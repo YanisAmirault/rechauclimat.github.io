@@ -347,15 +347,6 @@ div.tocify {
 </div>
 
 
-<pre class="r"><code>library(tmap)
-library(sf)
-library(dplyr)
-
-# Mode carte interactive
-tmap_mode(&quot;view&quot;)
-
-# Charger les données
-idf &lt;- st_read(&quot;communes-france.geojson&quot;)  # adapte le chemin si besoin</code></pre>
 <pre><code>## Reading layer `communes-france&#39; from data source 
 ##   `/Users/yanis-amirault/Desktop/L3/S2/Construction et utilisation des SIG/final/climat-banlieue/communes-france.geojson&#39; 
 ##   using driver `GeoJSON&#39;
@@ -364,35 +355,6 @@ idf &lt;- st_read(&quot;communes-france.geojson&quot;)  # adapte le chemin si be
 ## Dimension:     XY
 ## Bounding box:  xmin: 1.4463 ymin: 48.12008 xmax: 3.558985 ymax: 49.24146
 ## Geodetic CRS:  WGS 84</code></pre>
-<pre class="r"><code># Extraire Paris (fusion des arrondissements)
-paris &lt;- idf %&gt;%
-  filter(com_name_upper %in% c(&quot;PARIS&quot;))
-
-# Extraire les 3 communes étudiées
-selection &lt;- idf %&gt;%
-  filter(com_name_upper %in% c(&quot;CLAMART&quot;, &quot;GENNEVILLIERS&quot;, &quot;LE CHÂTELET-EN-BRIE&quot;))
-
-# Construire la carte
-ma_carte &lt;- tm_shape(idf) +
-  tm_borders(col = &quot;lightgray&quot;, lwd = 0.4) +
-  tm_fill(col = &quot;white&quot;, alpha = 0.01, popup.vars = &quot;com_name_upper&quot;) +
-
-  tm_shape(paris) +
-  tm_fill(col = &quot;red&quot;, alpha = 0.8, popup.vars = &quot;com_name_upper&quot;) +
-  tm_borders(col = &quot;darkred&quot;, lwd = 2) +
-
-  tm_shape(selection) +
-  tm_fill(col = &quot;skyblue&quot;, popup.vars = &quot;com_name_upper&quot;) +
-  tm_borders(col = &quot;darkblue&quot;, lwd = 2) +
-
-  tm_layout(main.title = &quot;Communes étudiées et Paris&quot;,
-            main.title.size = 1.1) +
-
-  tm_scale_bar(position = c(&quot;left&quot;, &quot;bottom&quot;)) +
-  tm_compass(position = c(&quot;left&quot;, &quot;top&quot;))
-
-# Exporter la carte en HTML autonome dans le dossier /docs
-tmap_save(ma_carte, filename = &quot;docs/carte_interactive.html&quot;)</code></pre>
 <p><img src="logo.jpg" alt="Logo" width="100" style="float:right; margin: 10px;" /></p>
 <div id="projet-sig-climat-végétation-en-banlieue-parisienne"
 class="section level1">
