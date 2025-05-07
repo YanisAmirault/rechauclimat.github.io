@@ -91,13 +91,35 @@ carte_chatelet <- tm_shape(chatelet) +
 tmap_save(carte_chatelet, "docs/carte-chatelet.html")
 ```
 
+#### Analyse : Clamart
 
 <iframe src="carte-clamart.html" width="100%" height="600px" frameborder="0"></iframe>
 
+On observe une importante couverture végétale dans le sud-ouest de la commune, notamment des parcs et zones boisées. Ces zones correspondent globalement à des indices de flux de chaleur plus faibles.
+
+En revanche, les zones urbaines denses du centre et nord de Clamart présentent des valeurs de chaleur plus élevées, souvent corrélées avec une vulnérabilité modérée à forte selon les données disponibles.
+
+Cela confirme le rôle modérateur de la végétation sur les températures.
+
+#### Analyse : Gennevilliers
+
 <iframe src="carte-gennevilliers.html" width="100%" height="600px" frameborder="0"></iframe>
+
+À Gennevilliers, la couverture végétale est plus morcelée et concentrée le long des axes et limites communales. Les îlots de chaleur sont nettement présents au centre et dans les zones industrielles.
+
+Les zones à forte chaleur coïncident avec des secteurs de vulnérabilité sociale modérée à forte, ce qui peut accentuer les inégalités d’exposition climatique.
+
+Les corridors verts semblent insuffisants pour contrebalancer ces effets localement.
+
+#### Analyse : Le Châtelet-en-Brie
 
 <iframe src="carte-chatelet.html" width="100%" height="600px" frameborder="0"></iframe>
 
+La commune présente une structure urbaine beaucoup plus lâche, avec de nombreux espaces végétalisés.
+
+Les îlots de chaleur sont moins intenses globalement, et leur répartition est diffuse. La vulnérabilité reste faible sur la majorité du territoire.
+
+Cela met en évidence l’effet protecteur des tissus peu denses et végétalisés en milieu périurbain ou rural.
 
 
 
