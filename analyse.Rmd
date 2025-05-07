@@ -3,8 +3,102 @@ title: "Analyse"
 output: html_document
 ---
 
-```{r setup, message=FALSE}
+```{r découpage des données, echo=FALSE, message=FALSE, warning=FALSE}
 library(sf)
 library(dplyr)
 library(tmap)
-library(ggplot2)
+
+tmap_mode("view")
+
+#charger les données
+communes <- st_read("communes-france.geojson", quiet = TRUE)
+vegetation <- st_read("occupation-du-sol-en-5-postes-1994-mos-simplifie-saisi-au-150000-dile-de-france.geojson", quiet = TRUE)
+icu <- st_read("ilots-de-chaleur-urbains-icu-classification-des-imu-en-zone-climatique-locale-lc 2.geojson", quiet = TRUE)
+
+vegetation <- vegetation %>%
+  filter(codzon %in% c("2"))
+
+#Reprojeter les couches dans le même système que les communes
+vegetation <- st_transform(vegetation, st_crs(communes))
+icu <- st_transform(icu, st_crs(communes))
+
+#filtrage des communes étudiées
+clamart <- communes %>% filter(com_name_upper == "CLAMART")
+gennevilliers <- communes %>% filter(com_name_upper == "GENNEVILLIERS")
+chatelet <- communes %>% filter(com_name_upper == "LE CHÂTELET-EN-BRIE")
+
+#Découpage des couches végétation et ICU par communes
+veg_clamart <- st_intersection(vegetation, clamart)
+veg_gennevilliers <- st_intersection(vegetation, gennevilliers)
+veg_chatelet <- st_intersection(vegetation, chatelet)
+
+icu_clamart <- st_intersection(icu, clamart)
+icu_gennevilliers <- st_intersection(icu, gennevilliers)
+icu_chatelet <- st_intersection(icu, chatelet)
+```
+
+```{r carte-clamart, echo=FALSE, message=FALSE, warning=FALSE}
+carte_clamart <- tm_shape(clamart) +
+  tm_borders(col = "gray") +
+
+  tm_shape(veg_clamart) +
+    tm_fill(col = "forestgreen", alpha = 0.4, group = "Espaces verts") +
+
+  tm_shape(icu_clamart) +
+    tm_fill(col = "flux_chale", palette = "YlOrRd", style = "quantile", group = "îlots de chaleur") +
+
+  tm_shape(icu_clamart) +
+    tm_fill(col = "vulnj_note", palette = "Purples", style = "quantile", group = "Vulnérabilités") +
+
+  tm_layout(main.title = "Clamart: analyse croisée", lengend.outside = TRUE)
+
+tmap_save(carte_clamart, "docs/carte-clamart.html")
+```
+
+```{r carte-gennevilliers, echo=FALSE, message=FALSE, warning=FALSE}
+carte_gennevilliers <- tm_shape(gennevilliers) +
+  tm_borders(col = "gray") +
+
+  tm_shape(veg_gennevilliers) +
+  tm_fill(col = "forestgreen", alpha = 0.4, group = "Espaces verts") +
+
+  tm_shape(icu_gennevilliers) +
+  tm_fill(col = "flux_chale", palette = "YlOrRd", style = "quantile", group = "îlots de chaleur") +
+
+  tm_shape(icu_gennevilliers) +
+  tm_fill(col = "vulnj_note", palette = "Purples", style = "quantile", group = "Vulnérabilités") +
+
+  tm_layout(main.title = "Gennevilliers: analyse croisée", lengend.outside = TRUE)
+
+tmap_save(carte_gennevilliers, "docs/carte-gennevilliers.html")
+```
+
+```{r carte-chatelet, echo=FALSE, message=FALSE, warning=FALSE}
+carte_chatelet <- tm_shape(chatelet) +
+  tm_borders(col = "gray") +
+
+  tm_shape(veg_chatelet) +
+  tm_fill(col = "forestgreen", alpha = 0.4, group = "Espaces verts") +
+
+  tm_shape(icu_chatelet) +
+  tm_fill(col = "flux_chale", palette = "YlOrRd", style = "quantile", group = "îlots de chaleur") +
+
+  tm_shape(icu_chatelet) +
+  tm_fill(col = "vulnj_note", palette = "Purples", style = "quantile", group = "Vulnérabilités") +
+
+  tm_layout(main.title = "Le Châtelet-en-Brie: analyse croisée", lengend.outside = TRUE)
+
+tmap_save(carte_chatelet, "docs/carte-chatelet.html")
+```
+
+
+
+
+
+
+
+
+
+
+
+
