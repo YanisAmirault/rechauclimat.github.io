@@ -1,9 +1,52 @@
 ---
-title: "Climat & Végétation en Banlieue Parisienne"
-output:
-  html_document:
-    self_contained: true
+title: "Accueil"
+output: html_document
 ---
+
+```{r carte-interactive, echo=FALSE, message=FALSE, warning=FALSE}
+library(tmap)
+library(sf)
+library(dplyr)
+
+# Mode carte interactive
+tmap_mode("view")
+
+# Charger les données
+idf <- st_read("communes-france.geojson")  # adapte le chemin si besoin
+
+# Extraire Paris (fusion des arrondissements)
+paris <- idf %>%
+  filter(com_name_upper %in% c("PARIS"))
+
+# Extraire les 3 communes étudiées
+selection <- idf %>%
+  filter(com_name_upper %in% c("CLAMART", "GENNEVILLIERS", "LE CHÂTELET-EN-BRIE"))
+
+# Construire la carte
+ma_carte <- tm_shape(idf) +
+  tm_borders(col = "lightgray", lwd = 0.4) +
+  tm_fill(col = "white", alpha = 0.01, popup.vars = "com_name_upper") +
+
+  tm_shape(paris) +
+  tm_fill(col = "red", alpha = 0.8, popup.vars = "com_name_upper") +
+  tm_borders(col = "darkred", lwd = 2) +
+
+  tm_shape(selection) +
+  tm_fill(col = "skyblue", popup.vars = "com_name_upper") +
+  tm_borders(col = "darkblue", lwd = 2) +
+
+  tm_layout(main.title = "Communes étudiées et Paris",
+            main.title.size = 1.1) +
+
+  tm_scale_bar(position = c("left", "bottom")) +
+  tm_compass(position = c("left", "top"))
+
+# Exporter la carte en HTML autonome dans le dossier /docs
+tmap_save(ma_carte, filename = "docs/carte_interactive.html")
+
+```
+
+<img src="logo.jpg" alt="Logo" width="100" style="float:right; margin: 10px;" />
 
 # Projet SIG : Climat & Végétation en Banlieue Parisienne
 
@@ -12,45 +55,7 @@ output:
 Ce site présente une étude SIG portant sur le lien entre **végétation** et **îlots de chaleur urbains** dans trois communes contrastées :  
 **Clamart**, **Gennevilliers** et **Le Châtelet-en-Brie**.
 
-
-```{r carte-interactive-idf, echo=FALSE, message=FALSE, warning=FALSE, results='asis'}
-library(sf)
-library(dplyr)
-library(tmap)
-tmap_mode("view")
-
-idf <- st_read("communes-france.geojson", quiet = TRUE)
-selection <- idf %>%
-  dplyr::filter(com_name_upper %in% c("CLAMART", "GENNEVILLIERS", "LE CHÂTELET-EN-BRIE"))
-
-paris <- idf %>%
-  dplyr::filter(com_name_upper %in% c("PARIS"))
-
-# 2. Carte complète
-carte_inte <- tm_shape(idf) +
-  tm_borders(col = "lightgray", lwd = 0.4) +
-  tm_fill(col = "white", alpha = 0.01, popup.vars = "com_name_upper") +
-
-tm_shape(paris) +
-  tm_fill(col = "red", alpha = 0.8, popup.vars = "com_name_upper") +
-  tm_borders(col = "darkred", lwd = 2) +
-
-tm_shape(selection) +
-  tm_fill(col = "skyblue",alpha = 0.8, popup.vars = "com_name_upper") +
-  tm_borders(col = "blue", lwd = 2) +
-
-tm_layout(main.title = "Localisation des communes étudiées",
-          main.title.size = 1.2)
-
-tmap_save(carte_inte, "docs/carte_interactive.html")
-
-```
-# Carte interactive
-
-Voici la carte interactive des communes étudiées :
-
 <iframe src="carte_interactive.html" width="100%" height="600px" frameborder="0"></iframe>
-
 
 ## Problématique
 
