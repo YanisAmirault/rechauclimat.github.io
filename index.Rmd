@@ -42,7 +42,7 @@ tm_shape(selection) +
 tm_layout(main.title = "Localisation des communes étudiées",
           main.title.size = 1.2)
 
-tmap_save(carte_inte, "docs/carte_interactive.html")
+tmap_save(carte_inte, "carte_interactive.html")
 
 ```
 # Carte interactive
