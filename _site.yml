@@ -1,5 +1,6 @@
 name: "climat-banlieue"
 output_dir: "docs"
+
 navbar:
   title: "Climat & Végétation"
   left:
