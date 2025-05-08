@@ -2,22 +2,67 @@
 output: html_document
 ---
 
-## Bilan de l'étude
+##  Bilan de l’étude
 
-Cette étude SIG a permis de croiser plusieurs couches de données : végétation, chaleur, vulnérabilité sociale; à une échelle fine (îlots urbains), afin d'identifier les zones urbaines les plus exposées aux effets du changement climatique.
+Cette étude SIG a permis de croiser plusieurs couches de données — végétation, chaleur, vulnérabilité sociale — à une échelle fine (îlots urbains), afin d’identifier les zones urbaines les plus exposées aux effets du changement climatique.
 
 ---
 
-## Enseignements principaux
+##  Enseignements principaux
 
 - **La végétation urbaine** a un rôle essentiel de régulation thermique.
 - **Les zones denses, imperméabilisées**, concentrent davantage les îlots de chaleur.
-- **Les publics vulnérables** sont souvent situés dans des zones critiques.
-- **Des disparités territoriales fortes** existent entre les communes étudiées:
+- **Les publics vulnérables** sont souvent situés dans ces zones critiques.
+- **Des disparités territoriales fortes** existent entre les communes étudiées :
   - Clamart : végétalisation fragmentée.
   - Gennevilliers : forte exposition + vulnérabilité sociale.
   - Le Châtelet-en-Brie : résilience naturelle élevée.
 
 ---
 
-## Carte de synthèse
+## ️ Carte de synthèse : vers une priorisation des actions
+
+La carte ci-dessous croise chaleur, vulnérabilité et végétation.  
+Elle met en évidence les zones à fort enjeu, à cibler en priorité pour des politiques d’adaptation urbaine.
+
+<div style="text-align: center;">
+<iframe src="carte_synthese.html" width="100%" height="600px" style="border:none; border-radius: 10px; box-shadow: 0 0 6px rgba(0,0,0,0.1);"></iframe>
+</div>
+
+---
+
+##  Limites de l’étude
+
+- L’étude ne prend pas encore en compte les **dynamiques temporelles**.
+- Certains jeux de données sont hétérogènes ou datés.
+- Le facteur de **mobilité et d’accès aux services** n’est pas intégré ici.
+
+---
+
+##  Pistes pour la suite
+
+- Intégrer des données capteurs (IoT) pour suivre la température en temps réel.
+- Proposer une **cartographie prospective** des actions de végétalisation.
+- Enrichir l’étude avec des indicateurs de **santé publique** ou **mobilité**.
+
+---
+
+##  Remerciements
+
+Projet réalisé dans le cadre du cours "Construction et utilisation des SIG"  
+Université [à compléter], Licence 3, semestre 2.  
+Merci à [enseignant·e] pour l’encadrement du projet.
+
+---
+
+##  Revenir à l’accueil
+
+<div style="text-align: center;">
+  <a href="index.html" style="text-decoration: none; padding: 12px 24px; background-color: #005f73; color: white; border-radius: 6px;">← Revenir à l’accueil</a>
+</div>
+
+---
+
+> _"La ville durable commence par une lecture fine de ses vulnérabilités."_  
+> — Synthèse du projet
+

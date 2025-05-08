@@ -88,7 +88,7 @@ carte_chatelet <- tm_shape(chatelet) +
   tm_layout(main.title = "Le Châtelet-en-Brie: analyse croisée", lengend.outside = TRUE)
 
 tmap_save(carte_chatelet, "docs/carte-chatelet.html", selfcontained = TRUE)
-```
+ ```
 
 ##  Objectif de l’analyse
 

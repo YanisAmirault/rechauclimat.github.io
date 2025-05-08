@@ -27,15 +27,13 @@ carte_vege <- tm_shape(vege) +
 tmap_save(carte_vege, filename = "docs/carte_vege.html")
 ```
 
-# Méthodologie
-
-## 🧭 Objectif de l’étude
+#  Objectif de l’étude
 
 Cette étude vise à mieux comprendre comment la **couverture végétale**, la **structure urbaine** et la **composition sociale** des territoires influencent leur exposition aux **îlots de chaleur urbains**.
 
 ---
 
-## 📥 Données mobilisées
+#  Données mobilisées
 
 | Jeu de données                 | Description                                   | Source                      | Format   |
 |--------------------------------|-----------------------------------------------|-----------------------------|----------|
@@ -45,7 +43,7 @@ Cette étude vise à mieux comprendre comment la **couverture végétale**, la *
 
 ---
 
-## 🧪 Méthode de traitement
+#  Méthode de traitement
 
 - Sélection des **3 communes cibles** (Clamart, Gennevilliers, Le Châtelet-en-Brie)
 - Extraction par **intersection spatiale** des zones végétalisées et des couches climatiques
@@ -53,7 +51,7 @@ Cette étude vise à mieux comprendre comment la **couverture végétale**, la *
 
 ---
 
-## 🗺️ Carte interactive : îlots de chaleur et vulnérabilité (source tierce)
+# ️ Carte interactive : îlots de chaleur et vulnérabilité (source tierce)
 
 Cette carte interactive, issue de l'Institut Paris Region, illustre la distribution des îlots de chaleur et les indices de vulnérabilité en Île-de-France.
 
@@ -63,7 +61,7 @@ Cette carte interactive, issue de l'Institut Paris Region, illustre la distribut
 
 ---
 
-## 🗺️ Carte interactive : végétation et occupation du sol
+# ️ Carte interactive : végétation et occupation du sol
 
 Voici la répartition des espaces verts identifiés dans la région francilienne, à partir de la couche MOS.
 
@@ -73,7 +71,7 @@ Voici la répartition des espaces verts identifiés dans la région francilienne
 
 ---
 
-## 🧰 Outils utilisés
+#  Outils utilisés
 
 L’ensemble du traitement a été effectué sous **RStudio**, à l’aide des bibliothèques suivantes :
 
@@ -84,7 +82,7 @@ L’ensemble du traitement a été effectué sous **RStudio**, à l’aide des b
 
 ---
 
-## ✅ Conclusion
+#  Conclusion
 
 La méthodologie adoptée assure la robustesse des croisements spatiaux entre climat, végétation et population.  
 Les cartes ci-dessus servent de base à l’analyse communale détaillée présentée dans la suite du site.

@@ -49,14 +49,14 @@ tmap_save(ma_carte, filename = "docs/carte_interactive.html", selfcontained = TR
 
 ---
 
-###  Contexte
+##  Contexte
 
 Ce site présente une étude SIG portant sur le lien entre **végétation**, **îlots de chaleur urbains** et **vulnérabilité des populations** dans trois communes franciliennes aux profils contrastés :  
 **Clamart**, **Gennevilliers** et **Le Châtelet-en-Brie**.
 
 ---
 
-###  Problématisation
+##  Problématisation
 
 > <span style="color: #444;">
 Avec la montée des températures liée au <strong>changement climatique</strong>, les zones urbaines deviennent des lieux d’exposition critique à la chaleur.
@@ -73,12 +73,12 @@ Cette étude croise donc des données :
 
 ---
 
-###  Problématique
+##  Problématique
 
 > <span style="font-size: 1.2em; color: #222;"><strong>Comment la couverture végétale et la morphologie urbaine influencent-elles les températures locales,  
 et comment ces dynamiques interagissent-elles avec la vulnérabilité des populations face aux îlots de chaleur ?</strong></span>
 
-### ️ Les communes étudiées
+## ️ Les communes étudiées
 
 <div style="display: flex; gap: 2rem; flex-wrap: wrap;">
 
@@ -102,7 +102,7 @@ Commune périurbaine de la grande couronne. Faible densité, très végétalisé
 
 ---
 
-### ️ Carte interactive
+## ️ Carte interactive
 
 <div style="text-align: center;">
 <iframe src="carte_interactive.html" width="100%" height="500px" style="border: none; box-shadow: 0 0 8px rgba(0,0,0,0.1); border-radius: 12px;"></iframe>
