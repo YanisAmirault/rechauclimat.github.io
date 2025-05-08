@@ -52,7 +52,7 @@ carte_clamart <- tm_shape(clamart) +
 
   tm_layout(main.title = "Clamart: analyse croisée", lengend.outside = TRUE)
 
-tmap_save(carte_clamart, "docs/carte-clamart.html")
+tmap_save(carte_clamart, "docs/carte-clamart.html", selfcontained = TRUE)
 ```
 
 ```{r carte-gennevilliers, echo=FALSE, message=FALSE, warning=FALSE}
@@ -70,7 +70,7 @@ carte_gennevilliers <- tm_shape(gennevilliers) +
 
   tm_layout(main.title = "Gennevilliers: analyse croisée", lengend.outside = TRUE)
 
-tmap_save(carte_gennevilliers, "docs/carte-gennevilliers.html")
+tmap_save(carte_gennevilliers, "docs/carte-gennevilliers.html", selfcontained = TRUE)
 ```
 
 ```{r carte-chatelet, echo=FALSE, message=FALSE, warning=FALSE}
@@ -81,14 +81,14 @@ carte_chatelet <- tm_shape(chatelet) +
   tm_fill(col = "forestgreen", alpha = 0.4, group = "Espaces verts") +
 
   tm_shape(icu_chatelet) +
-  tm_fill(col = "flux_chale", palette = "YlOrRd", style = "quantile", group = "îlots de chaleur") +
+  tm_fill(col = "flux_chale", palette = "YlOrRd", style = "equal", group = "îlots de chaleur") +
 
   tm_shape(icu_chatelet) +
   tm_fill(col = "vulnj_note", palette = "Purples", style = "quantile", group = "Vulnérabilités") +
 
   tm_layout(main.title = "Le Châtelet-en-Brie: analyse croisée", lengend.outside = TRUE)
 
-tmap_save(carte_chatelet, "docs/carte-chatelet.html")
+tmap_save(carte_chatelet, "docs/carte-chatelet.html", selfcontained = TRUE)
 ```
 
 ##  Objectif de l’analyse
@@ -149,7 +149,7 @@ La **vulnérabilité sociale y est également faible** : on observe ici une **si
 
 ##  Synthèse comparative
 
-| Commune             | Végétation | Îlots de chaleur | Vulnérabilité sociale | Risque global |
+| Commune             | Végétation | Îlots de chaleur | Vulnérabilité sociale  | Risque global  |
 |---------------------|------------|------------------|------------------------|----------------|
 | Clamart             | Moyenne    | Localisés        | Modérée                | Modéré         |
 | Gennevilliers       | Faible     | Forts            | Élevée                 | Élevé          |
