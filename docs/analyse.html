@@ -16,7 +16,7 @@
 <script src="site_libs/header-attrs-2.29/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<link href="site_libs/bootstrap-3.3.5/css/flatly.min.css" rel="stylesheet" />
+<link href="site_libs/bootstrap-3.3.5/css/sandstone.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
@@ -314,7 +314,8 @@ div.tocify {
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="index.html">Climat & Végétation</a>
+      <a class="navbar-brand" href="index.html">![Logo](logo.png){style="height:30px; vertical-align:middle; margin-right:8px;"} Climat & Végétation
+</a>
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
@@ -325,7 +326,7 @@ div.tocify {
   <a href="methodo.html">Méthodologie</a>
 </li>
 <li>
-  <a href="traitement.html">Analyse</a>
+  <a href="analyse.html">Analyse</a>
 </li>
 <li>
   <a href="conclusion.html">Conclusion</a>
@@ -348,7 +349,7 @@ div.tocify {
 
 
 <div id="objectif-de-lanalyse" class="section level2">
-<h2>🎯 Objectif de l’analyse</h2>
+<h2>Objectif de l’analyse</h2>
 <p>Dans cette section, nous analysons de manière détaillée les trois
 communes sélectionnées.<br />
 Nous croisons trois dimensions spatiales : - la
@@ -358,13 +359,13 @@ sociale</strong> (indices de sensibilité des populations).</p>
 <hr />
 </div>
 <div id="clamart" class="section level2">
-<h2>🏙️ Clamart</h2>
+<h2>️ Clamart</h2>
 <div style="text-align: center;">
 <iframe src="carte-clamart.html" width="100%" height="600px" style="border:none; border-radius: 10px; box-shadow: 0 0 6px rgba(0,0,0,0.1);">
 </iframe>
 </div>
 <div id="analyse" class="section level3">
-<h3>🔍 Analyse</h3>
+<h3>Analyse</h3>
 <p>Clamart présente une situation contrastée : le sud de la commune est
 très végétalisé, notamment avec la forêt de Meudon.<br />
 Cette zone bénéficie de températures modérées.<br />
@@ -377,13 +378,13 @@ urbanisés.</p>
 </div>
 </div>
 <div id="gennevilliers" class="section level2">
-<h2>🏭 Gennevilliers</h2>
+<h2>Gennevilliers</h2>
 <div style="text-align: center;">
 <iframe src="carte-gennevilliers.html" width="100%" height="600px" style="border:none; border-radius: 10px; box-shadow: 0 0 6px rgba(0,0,0,0.1);">
 </iframe>
 </div>
 <div id="analyse-1" class="section level3">
-<h3>🔍 Analyse</h3>
+<h3>Analyse</h3>
 <p>Gennevilliers concentre les <strong>facteurs de risque
 climatique</strong> :<br />
 - une très faible couverture végétale,<br />
@@ -398,13 +399,13 @@ d’exposition climatique aggravée</strong>.</p>
 </div>
 </div>
 <div id="le-châtelet-en-brie" class="section level2">
-<h2>🌲 Le Châtelet-en-Brie</h2>
+<h2>Le Châtelet-en-Brie</h2>
 <div style="text-align: center;">
 <iframe src="carte-chatelet.html" width="100%" height="600px" style="border:none; border-radius: 10px; box-shadow: 0 0 6px rgba(0,0,0,0.1);">
 </iframe>
 </div>
 <div id="analyse-2" class="section level3">
-<h3>🔍 Analyse</h3>
+<h3>Analyse</h3>
 <p>Le Châtelet-en-Brie bénéficie d’un tissu urbain <strong>peu dense et
 très végétalisé</strong>.<br />
 Les températures sont modérées sur l’ensemble de la commune, avec très
@@ -416,7 +417,7 @@ fait du cadre rural.</p>
 </div>
 </div>
 <div id="synthèse-comparative" class="section level2">
-<h2>🧮 Synthèse comparative</h2>
+<h2>Synthèse comparative</h2>
 <table>
 <colgroup>
 <col width="23%" />
@@ -461,7 +462,7 @@ fait du cadre rural.</p>
 <hr />
 </div>
 <div id="conclusion-de-lanalyse" class="section level2">
-<h2>✅ Conclusion de l’analyse</h2>
+<h2>Conclusion de l’analyse</h2>
 <p>Cette étude confirme que la <strong>végétation joue un rôle
 modérateur sur les températures locales</strong>, mais que ce facteur
 seul ne suffit pas.<br />
@@ -524,7 +525,7 @@ $(document).ready(function ()  {
 
     // establish options
     var options = {
-      selectors: "h1,h2,h3",
+      selectors: "h1,h2",
       theme: "bootstrap3",
       context: '.toc-content',
       hashGenerator: function (text) {

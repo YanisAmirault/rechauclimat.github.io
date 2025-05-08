@@ -2,7 +2,8 @@ name: "climat-banlieue"
 output_dir: "docs"
 
 navbar:
-  title: "Climat & Végétation"
+  title: |
+    ![Logo](logo.png){style="height:30px; vertical-align:middle; margin-right:8px;"} Climat & Végétation
   left:
     - text: "Accueil"
       href: index.html
@@ -12,9 +13,10 @@ navbar:
       href: analyse.html
     - text: "Conclusion"
       href: conclusion.html
-      
+
 output:
   html_document:
-    theme: flatly
+    theme: sandstone     # Thèmes alternatifs : flatly, cosmo, united
     toc: true
     toc_float: true
+    toc_depth: 2

@@ -3,7 +3,7 @@ title: "Analyse"
 output: html_document
 ---
 
-## 🎯 Objectif de l’analyse
+##  Objectif de l’analyse
 
 Dans cette section, nous analysons de manière détaillée les trois communes sélectionnées.  
 Nous croisons trois dimensions spatiales :
@@ -13,13 +13,13 @@ Nous croisons trois dimensions spatiales :
 
 ---
 
-## 🏙️ Clamart
+## ️ Clamart
 
 <div style="text-align: center;">
 <iframe src="carte-clamart.html" width="100%" height="600px" style="border:none; border-radius: 10px; box-shadow: 0 0 6px rgba(0,0,0,0.1);"></iframe>
 </div>
 
-### 🔍 Analyse
+###  Analyse
 
 Clamart présente une situation contrastée : le sud de la commune est très végétalisé, notamment avec la forêt de Meudon.  
 Cette zone bénéficie de températures modérées.  
@@ -28,13 +28,13 @@ La vulnérabilité reste modérée, mais concentrée dans certains secteurs urba
 
 ---
 
-## 🏭 Gennevilliers
+##  Gennevilliers
 
 <div style="text-align: center;">
 <iframe src="carte-gennevilliers.html" width="100%" height="600px" style="border:none; border-radius: 10px; box-shadow: 0 0 6px rgba(0,0,0,0.1);"></iframe>
 </div>
 
-### 🔍 Analyse
+###  Analyse
 
 Gennevilliers concentre les **facteurs de risque climatique** :  
 - une très faible couverture végétale,  
@@ -46,13 +46,13 @@ La carte de vulnérabilité montre que les populations les plus fragiles se trou
 
 ---
 
-## 🌲 Le Châtelet-en-Brie
+##  Le Châtelet-en-Brie
 
 <div style="text-align: center;">
 <iframe src="carte-chatelet.html" width="100%" height="600px" style="border:none; border-radius: 10px; box-shadow: 0 0 6px rgba(0,0,0,0.1);"></iframe>
 </div>
 
-### 🔍 Analyse
+###  Analyse
 
 Le Châtelet-en-Brie bénéficie d’un tissu urbain **peu dense et très végétalisé**.  
 Les températures sont modérées sur l’ensemble de la commune, avec très peu de zones d’accumulation thermique.  
@@ -60,7 +60,7 @@ La **vulnérabilité sociale y est également faible** : on observe ici une **r�
 
 ---
 
-## 🧮 Synthèse comparative
+##  Synthèse comparative
 
 | Commune             | Végétation | Îlots de chaleur | Vulnérabilité sociale  | Risque global  |
 |---------------------|------------|------------------|------------------------|----------------|
@@ -70,7 +70,7 @@ La **vulnérabilité sociale y est également faible** : on observe ici une **r�
 
 ---
 
-## ✅ Conclusion de l’analyse
+##  Conclusion de l’analyse
 
 Cette étude confirme que la **végétation joue un rôle modérateur sur les températures locales**, mais que ce facteur seul ne suffit pas.  
 La **vulnérabilité des populations** est un facteur déterminant dans la gestion des risques liés aux îlots de chaleur.
