@@ -1,5 +1,4 @@
 ---
-title: 
 output: html_document
 ---
 
@@ -10,13 +9,13 @@ library(dplyr)
 
 tmap_mode("view")
 
-sol <- st_read("mode-doccupation-du-sol-mos-en-11-postes-en-2017.geojson", quiet = TRUE)
+sol <- st_read("occupation-du-sol-en-5-postes-1994-mos-simplifie-saisi-au-150000-dile-de-france.geojson", quiet = TRUE)
 
 vege <- sol %>%
-  filter(mos2017_11 %in% c("1", "2", "5"))
+  filter(codzon %in% c("2"))
 
 carte_vege <- tm_shape(vege) +
-  tm_fill( col = "darkgreen", alpha = 0.5, popup.vars = "mos2017_11") +
+  tm_fill( col = "darkgreen", alpha = 0.5, popup.vars = "codzon") +
   tm_borders(col = "white", lwd = 0.2) +
   tm_layout(
     main.title = "Espaces végétalisés en Île-de-France",
@@ -59,6 +58,15 @@ Cette carte interactive, issue de l'Institut Paris Region, illustre la distribut
 <iframe src="https://www.arcgis.com/apps/instant/portfolio/index.html?appid=ff73f22b99c74d009e0882aa2aff3149" width="100%" height="600px" style="border:none; border-radius: 10px; box-shadow: 0 0 8px rgba(0,0,0,0.1);"></iframe>
 </div>
 
+<div style="text-align: center; margin-top: 20px; margin-bottom: 10px;">
+  <a href="https://www.arcgis.com/apps/instant/portfolio/index.html?appid=ff37f22b99c74d009e0882a2aff3149" target="_blank" style="background-color: #c0392b; color: white; padding: 12px 20px; border-radius: 6px; text-decoration: none; font-weight: bold;">
+    Accéder à la carte interactive
+  </a>
+</div>
+
+<p style="font-size: 0.9em; color: #555; text-align: center;">
+  Source : Institut Paris Region. (2023). <i>Îlots de chaleur urbains et vulnérabilité en Île-de-France</i> [Carte interactive]. https://www.arcgis.com/apps/instant/portfolio/index.html?appid=ff37f22b99c74d009e0882a2aff3149
+</p>
 ---
 
 # ️ Carte interactive : végétation et occupation du sol

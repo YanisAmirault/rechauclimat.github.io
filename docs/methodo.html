@@ -11,7 +11,7 @@
 
 
 
-<title>Méthodologie</title>
+<title>methodo.knit</title>
 
 <script src="site_libs/header-attrs-2.29/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
@@ -342,52 +342,123 @@ div.tocify {
 
 
 
-<h1 class="title toc-ignore">Méthodologie</h1>
 
 </div>
 
 
-<div id="données-utilisées" class="section level1">
-<h1>Données utilisées</h1>
+<div id="objectif-de-létude" class="section level1">
+<h1>Objectif de l’étude</h1>
+<p>Cette étude vise à mieux comprendre comment la <strong>couverture
+végétale</strong>, la <strong>structure urbaine</strong> et la
+<strong>composition sociale</strong> des territoires influencent leur
+exposition aux <strong>îlots de chaleur urbains</strong>.</p>
+<hr />
+</div>
+<div id="données-mobilisées" class="section level1">
+<h1>Données mobilisées</h1>
+<table>
+<colgroup>
+<col width="27%" />
+<col width="39%" />
+<col width="24%" />
+<col width="8%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Jeu de données</th>
+<th>Description</th>
+<th>Source</th>
+<th>Format</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>communes-france.geojson</code></td>
+<td>Limites administratives</td>
+<td>data.gouv.fr</td>
+<td>GeoJSON</td>
+</tr>
+<tr class="even">
+<td><code>occupation-du-sol.geojson</code></td>
+<td>Espaces verts et zones bâties</td>
+<td>Institut Paris Region (MOS)</td>
+<td>GeoJSON</td>
+</tr>
+<tr class="odd">
+<td><code>ilot-de-chaleur.geojson</code></td>
+<td>Indicateurs climatiques et sociaux</td>
+<td>Institut Paris Region</td>
+<td>GeoJSON</td>
+</tr>
+</tbody>
+</table>
+<hr />
+</div>
+<div id="méthode-de-traitement" class="section level1">
+<h1>Méthode de traitement</h1>
 <ul>
-<li><strong>Occupation du sol</strong> (MOS Île-de-France) pour
-cartographier la végétation</li>
+<li>Sélection des <strong>3 communes cibles</strong> (Clamart,
+Gennevilliers, Le Châtelet-en-Brie)</li>
+<li>Extraction par <strong>intersection spatiale</strong> des zones
+végétalisées et des couches climatiques</li>
+<li>Export des cartes au format <code>.html</code> pour intégration sur
+ce site</li>
 </ul>
-<iframe src="carte_vege.html" width="100%" height="600px" frameborder="0">
+<hr />
+</div>
+<div
+id="carte-interactive-îlots-de-chaleur-et-vulnérabilité-source-tierce"
+class="section level1">
+<h1>️ Carte interactive : îlots de chaleur et vulnérabilité (source
+tierce)</h1>
+<p>Cette carte interactive, issue de l’Institut Paris Region, illustre
+la distribution des îlots de chaleur et les indices de vulnérabilité en
+Île-de-France.</p>
+<div style="text-align: center;">
+<iframe src="https://www.arcgis.com/apps/instant/portfolio/index.html?appid=ff73f22b99c74d009e0882aa2aff3149" width="100%" height="600px" style="border:none; border-radius: 10px; box-shadow: 0 0 8px rgba(0,0,0,0.1);">
 </iframe>
-<ul>
-<li><strong>Zones climatiques locales (LCZ)</strong> pour repérer les
-îlots de chaleur</li>
-</ul>
-<iframe src="https://www.arcgis.com/apps/instant/portfolio/index.html?appid=ff73f22b99c74d009e0882aa2aff3149" width="120%" height="600px" frameborder="0" allowfullscreen>
+</div>
+<div style="text-align: center; margin-top: 20px; margin-bottom: 10px;">
+<p><a href="https://www.arcgis.com/apps/instant/portfolio/index.html?appid=ff37f22b99c74d009e0882a2aff3149" target="_blank" style="background-color: #c0392b; color: white; padding: 12px 20px; border-radius: 6px; text-decoration: none; font-weight: bold;">
+Accéder à la carte interactive </a></p>
+</div>
+<p style="font-size: 0.9em; color: #555; text-align: center;">
+Source : Institut Paris Region. (2023). <i>Îlots de chaleur urbains et
+vulnérabilité en Île-de-France</i> [Carte interactive]. <a
+href="https://www.arcgis.com/apps/instant/portfolio/index.html?appid=ff37f22b99c74d009e0882a2aff3149"
+class="uri">https://www.arcgis.com/apps/instant/portfolio/index.html?appid=ff37f22b99c74d009e0882a2aff3149</a>
+</p>
+<hr />
+</div>
+<div id="carte-interactive-végétation-et-occupation-du-sol"
+class="section level1">
+<h1>️ Carte interactive : végétation et occupation du sol</h1>
+<p>Voici la répartition des espaces verts identifiés dans la région
+francilienne, à partir de la couche MOS.</p>
+<div style="text-align: center;">
+<iframe src="carte_vege.html" width="100%" height="600px" style="border:none; border-radius: 10px; box-shadow: 0 0 8px rgba(0,0,0,0.1);">
 </iframe>
-<ul>
-<li><strong>Contours communaux</strong> (Admin Express)</li>
-</ul>
 </div>
-<div id="outils-packages" class="section level1">
-<h1>Outils &amp; Packages</h1>
-<ul>
-<li><code>sf</code> : manipulation des données spatiales<br />
-</li>
-<li><code>dplyr</code> : analyse des tableaux<br />
-</li>
-<li><code>tmap</code> et <code>ggplot2</code> : cartographie<br />
-</li>
-<li><code>rmarkdown</code> : publication en ligne</li>
-</ul>
+<hr />
 </div>
-<div id="étapes" class="section level1">
-<h1>Étapes</h1>
-<ol style="list-style-type: decimal">
-<li>Import des shapefiles<br />
-</li>
-<li>Filtrage par commune<br />
-</li>
-<li>Croisement entre végétation et intensité thermique<br />
-</li>
-<li>Génération des cartes et analyses graphiques</li>
-</ol>
+<div id="outils-utilisés" class="section level1">
+<h1>Outils utilisés</h1>
+<p>L’ensemble du traitement a été effectué sous
+<strong>RStudio</strong>, à l’aide des bibliothèques suivantes :</p>
+<ul>
+<li><code>sf</code> → lecture et traitement des géométries</li>
+<li><code>tmap</code> → cartographie interactive</li>
+<li><code>dplyr</code> → manipulation des données attributaires</li>
+<li><code>rmarkdown</code> → génération du site web</li>
+</ul>
+<hr />
+</div>
+<div id="conclusion" class="section level1">
+<h1>Conclusion</h1>
+<p>La méthodologie adoptée assure la robustesse des croisements spatiaux
+entre climat, végétation et population.<br />
+Les cartes ci-dessus servent de base à l’analyse communale détaillée
+présentée dans la suite du site.</p>
 </div>
 
 
