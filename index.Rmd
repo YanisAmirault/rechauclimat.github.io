@@ -1,5 +1,4 @@
 ---
-title: 
 output: html_document
 ---
 
@@ -45,19 +44,19 @@ tmap_save(ma_carte, filename = "docs/carte_interactive.html", selfcontained = TR
 
 ```
 
-## <span style="font-size: 2em;">🌡️ Climat, Végétation & Vulnérabilité</span>
+## <span style="font-size: 2em;">️ Climat, Végétation & Vulnérabilité</span>
 ### <span style="color: #555;">Analyse spatiale en banlieue parisienne</span>
 
 ---
 
-### 🌍 Contexte
+###  Contexte
 
 Ce site présente une étude SIG portant sur le lien entre **végétation**, **îlots de chaleur urbains** et **vulnérabilité des populations** dans trois communes franciliennes aux profils contrastés :  
 **Clamart**, **Gennevilliers** et **Le Châtelet-en-Brie**.
 
 ---
 
-### 🔍 Problématisation
+###  Problématisation
 
 > <span style="color: #444;">
 Avec la montée des températures liée au <strong>changement climatique</strong>, les zones urbaines deviennent des lieux d’exposition critique à la chaleur.
@@ -74,28 +73,28 @@ Cette étude croise donc des données :
 
 ---
 
-### ❓ Problématique
+###  Problématique
 
 > <span style="font-size: 1.2em; color: #222;"><strong>Comment la couverture végétale et la morphologie urbaine influencent-elles les températures locales,  
 et comment ces dynamiques interagissent-elles avec la vulnérabilité des populations face aux îlots de chaleur ?</strong></span>
 
-### 🏙️ Les communes étudiées
+### ️ Les communes étudiées
 
 <div style="display: flex; gap: 2rem; flex-wrap: wrap;">
 
 <div style="flex: 1; min-width: 250px;">
-<h4>📌 Clamart (92)</h4>
+<h4> Clamart (92)</h4>
 Commune résidentielle de la petite couronne, alternant quartiers denses et grands bois périurbains.  
 Elle représente un **territoire intermédiaire** avec des enjeux de préservation végétale.
 </div>
 
 <div style="flex: 1; min-width: 250px;">
-<h4>🏭 Gennevilliers (92)</h4>
+<h4> Gennevilliers (92)</h4>
 Commune très dense et marquée par un passé industriel. Peu végétalisée, elle cumule **forte densité** et **vulnérabilité sociale élevée**.
 </div>
 
 <div style="flex: 1; min-width: 250px;">
-<h4>🌳 Le Châtelet-en-Brie (77)</h4>
+<h4> Le Châtelet-en-Brie (77)</h4>
 Commune périurbaine de la grande couronne. Faible densité, très végétalisée, mais avec un **accès plus limité aux services** et un **profil rural**.
 </div>
 
@@ -103,7 +102,7 @@ Commune périurbaine de la grande couronne. Faible densité, très végétalisé
 
 ---
 
-### 🗺️ Carte interactive
+### ️ Carte interactive
 
 <div style="text-align: center;">
 <iframe src="carte_interactive.html" width="100%" height="500px" style="border: none; box-shadow: 0 0 8px rgba(0,0,0,0.1); border-radius: 12px;"></iframe>

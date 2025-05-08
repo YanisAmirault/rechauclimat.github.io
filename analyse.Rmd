@@ -1,5 +1,4 @@
 ---
-title: "Analyse"
 output: html_document
 ---
 
@@ -13,7 +12,7 @@ tmap_mode("view")
 #charger les données
 communes <- st_read("communes-france.geojson", quiet = TRUE)
 vegetation <- st_read("mode-doccupation-du-sol-mos-en-11-postes-en-2017.geojson", quiet = TRUE)
-icu <- st_read("ilots-de-chaleur-urbains-icu-classification-des-imu-en-zone-climatique-locale-lc 2.geojson", quiet = TRUE)
+icu <- st_read("ilots-de-chaleur-urbains-icu-classification-des-imu-en-zone-climatique-locale-lc.geojson", quiet = TRUE)
 
 vegetation <- vegetation %>%
   filter(mos2017_11 %in% c("1", "2", "5"))
@@ -52,7 +51,7 @@ carte_clamart <- tm_shape(clamart) +
 
   tm_layout(main.title = "Clamart: analyse croisée", lengend.outside = TRUE)
 
-tmap_save(carte_clamart, "docs/carte-clamart.html")
+tmap_save(carte_clamart, "docs/carte-clamart.html", selfcontained = TRUE)
 ```
 
 ```{r carte-gennevilliers, echo=FALSE, message=FALSE, warning=FALSE}
@@ -70,7 +69,7 @@ carte_gennevilliers <- tm_shape(gennevilliers) +
 
   tm_layout(main.title = "Gennevilliers: analyse croisée", lengend.outside = TRUE)
 
-tmap_save(carte_gennevilliers, "docs/carte-gennevilliers.html")
+tmap_save(carte_gennevilliers, "docs/carte-gennevilliers.html", selfcontained = TRUE)
 ```
 
 ```{r carte-chatelet, echo=FALSE, message=FALSE, warning=FALSE}
@@ -88,43 +87,83 @@ carte_chatelet <- tm_shape(chatelet) +
 
   tm_layout(main.title = "Le Châtelet-en-Brie: analyse croisée", lengend.outside = TRUE)
 
-tmap_save(carte_chatelet, "docs/carte-chatelet.html")
+tmap_save(carte_chatelet, "docs/carte-chatelet.html", selfcontained = TRUE)
 ```
 
-#### Analyse : Clamart
+##  Objectif de l’analyse
 
-<iframe src="carte-clamart.html" width="100%" height="600px" frameborder="0"></iframe>
+Dans cette section, nous analysons de manière détaillée les trois communes sélectionnées.  
+Nous croisons trois dimensions spatiales :
+- la **végétation** (occupation du sol),
+- les **îlots de chaleur** (flux thermique),
+- et la **vulnérabilité sociale** (indices de sensibilité des populations).
 
-On observe une importante couverture végétale dans le sud-ouest de la commune, notamment des parcs et zones boisées. Ces zones correspondent globalement à des indices de flux de chaleur plus faibles.
+---
+##  Clamart
 
-En revanche, les zones urbaines denses du centre et nord de Clamart présentent des valeurs de chaleur plus élevées, souvent corrélées avec une vulnérabilité modérée à forte selon les données disponibles.
+<div style="text-align: center;">
+<iframe src="carte-clamart.html" width="100%" height="600px" style="border:none; border-radius: 10px; box-shadow: 0 0 6px rgba(0,0,0,0.1);"></iframe>
+</div>
 
-Cela confirme le rôle modérateur de la végétation sur les températures.
+###  Analyse
 
-#### Analyse : Gennevilliers
+Clamart présente une situation contrastée : le sud de la commune est très végétalisé, notamment avec la forêt de Meudon.  
+Cette zone bénéficie de températures modérées.  
+À l’inverse, le nord et le centre — plus denses — présentent des **îlots de chaleur marqués**, particulièrement en lien avec des zones peu végétalisées.  
+La vulnérabilité reste modérée mais concentrée dans certains secteurs urbanisés.
 
-<iframe src="carte-gennevilliers.html" width="100%" height="600px" frameborder="0"></iframe>
+---
 
-À Gennevilliers, la couverture végétale est plus morcelée et concentrée le long des axes et limites communales. Les îlots de chaleur sont nettement présents au centre et dans les zones industrielles.
+##  Gennevilliers
 
-Les zones à forte chaleur coïncident avec des secteurs de vulnérabilité sociale modérée à forte, ce qui peut accentuer les inégalités d’exposition climatique.
+<div style="text-align: center;">
+<iframe src="carte-gennevilliers.html" width="100%" height="600px" style="border:none; border-radius: 10px; box-shadow: 0 0 6px rgba(0,0,0,0.1);"></iframe>
+</div>
 
-Les corridors verts semblent insuffisants pour contrebalancer ces effets localement.
+###  Analyse
 
-#### Analyse : Le Châtelet-en-Brie
+Gennevilliers concentre les **facteurs de risque climatique** :  
+- Une très faible couverture végétale,
+- Une forte densité bâtie,
+- Des zones industrielles imperméabilisées.
 
-<iframe src="carte-chatelet.html" width="100%" height="600px" frameborder="0"></iframe>
+Les **flux de chaleur y sont intenses**, en particulier au centre.  
+La carte de vulnérabilité montre que les populations les plus fragiles se trouvent justement dans ces zones chaudes, posant un **problème d’exposition climatique aggravée**.
 
-La commune présente une structure urbaine beaucoup plus lâche, avec de nombreux espaces végétalisés.
+---
 
-Les îlots de chaleur sont moins intenses globalement, et leur répartition est diffuse. La vulnérabilité reste faible sur la majorité du territoire.
+##  Le Châtelet-en-Brie
 
-Cela met en évidence l’effet protecteur des tissus peu denses et végétalisés en milieu périurbain ou rural.
+<div style="text-align: center;">
+<iframe src="carte-chatelet.html" width="100%" height="600px" style="border:none; border-radius: 10px; box-shadow: 0 0 6px rgba(0,0,0,0.1);"></iframe>
+</div>
 
+###  Analyse
 
+Le Châtelet-en-Brie bénéficie d’un tissu urbain **peu dense et très végétalisé**.  
+Les températures sont modérées sur l’ensemble de la commune, avec très peu de zones d’accumulation thermique.  
+La **vulnérabilité sociale y est également faible** : on observe ici une **situation de résilience climatique naturelle**, du fait du cadre rural.
 
+---
 
+##  Synthèse comparative
 
+| Commune             | Végétation | Îlots de chaleur | Vulnérabilité sociale | Risque global |
+|---------------------|------------|------------------|------------------------|----------------|
+| Clamart             | Moyenne    | Localisés        | Modérée                | Modéré         |
+| Gennevilliers       | Faible     | Forts            | Élevée                 | Élevé          |
+| Le Châtelet-en-Brie | Forte      | Faibles          | Faible                 | Faible         |
 
+---
+
+##  Conclusion de l’analyse
+
+Cette étude confirme que la **végétation joue un rôle modérateur sur les températures locales**, mais que ce facteur seul ne suffit pas.  
+La **vulnérabilité des populations** est un facteur déterminant dans la gestion des risques liés aux îlots de chaleur.
+
+Les territoires cumulant densité, manque de végétation et fragilité sociale sont les plus exposés — comme c’est le cas à Gennevilliers.  
+À l’inverse, des communes rurales comme Le Châtelet-en-Brie bénéficient d’une protection naturelle mais posent la question de l’**accès aux services en période de crise**.
+
+---
 
 
