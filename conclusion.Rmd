@@ -65,3 +65,12 @@ Sorbonne Université, Licence 3, semestre 2.
 > _"La ville durable commence par une lecture fine de ses vulnérabilités."_  
 > — Synthèse du projet
 
+---
+
+```{=html}
+<div style="text-align: center; margin-top: 2em;">
+  <a href="tou les codes.R" download style="background-color: #4CAF50; color: white; padding: 12px 20px; text-decoration: none; border-radius: 8px; font-size: 1.1em;">
+    Télécharger le code R complet
+  </a>
+</div>
+```
