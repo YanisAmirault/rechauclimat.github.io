@@ -2,9 +2,15 @@
 output: html_document
 ---
 
-
-## <span style="font-size: 2em;">️ Climat, Végétation & Vulnérabilité</span>
-### <span style="color: #555;">Analyse spatiale en banlieue parisienne</span>
+```{=html}
+<div style="display: flex; justify-content: space-between; align-items: center; padding-bottom: 1em">
+  <div>
+    <h1 style="margin: 0; font-size: 2.5em;">Climat, Végétation & Vulnérabilité</h1>
+    <p style="margin: 0; color: #555;">Analyse spatiale en banlieue parisienne</p>
+  </div>
+  <img src="logo.jpg" alt="Logo" style="height: 70px;">
+</div>
+```
 
 ---
 

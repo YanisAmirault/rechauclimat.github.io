@@ -2,8 +2,7 @@ name: "climat-banlieue"
 output_dir: "docs"
 
 navbar:
-  title: |
-    ![Logo](logo.png){style="height:30px; vertical-align:middle; margin-right:8px;"} Climat & Végétation
+  title: "Climat & Végétation"
   left:
     - text: "Accueil"
       href: index.html

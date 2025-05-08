@@ -29,15 +29,8 @@ Elle met en évidence les zones à fort enjeu, à cibler en priorité pour des p
 <iframe src="https://cartoviz2.institutparisregion.fr/?id_appli=regreen" width="100%" height="600px" style="border:none; border-radius: 10px; box-shadow: 0 0 6px rgba(0,0,0,0.1);"></iframe>
 </div>
 
-<div style="text-align: center; margin-top: 20px; margin-bottom: 10px;">
-  <a href="https://cartoviz2.institutparisregion.fr/?id_appli=regreen" target="_blank" style="background-color: #0077b6; color: white; padding: 12px 20px; border-radius: 6px; text-decoration: none; font-weight: bold;">
-    Accéder à la carte interactive
-  </a>
-</div>
+➡️ Consultez la carte interactive [Où renaturer en Île-de-France ?](https://cartoviz2.institutparisregion.fr/?id_appli=regreen), proposée par l’Institut Paris Region.
 
-<p style="font-size: 0.9em; color: #555; text-align: center;">
-  Source : Institut Paris Region. (2023). <i>Où renaturer en Île-de-France ?</i> [Carte interactive]. https://cartoviz2.institutparisregion.fr/?id_appli=regreen
-</p>
 ---
 
 ##  Limites de l’étude

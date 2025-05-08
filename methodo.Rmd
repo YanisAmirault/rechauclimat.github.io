@@ -35,15 +35,8 @@ Cette carte interactive, issue de l'Institut Paris Region, illustre la distribut
 <iframe src="https://www.arcgis.com/apps/instant/portfolio/index.html?appid=ff73f22b99c74d009e0882aa2aff3149" width="115%" height="600px" style="border:none; border-radius: 10px; box-shadow: 0 0 8px rgba(0,0,0,0.1);"></iframe>
 </div>
 
-<div style="text-align: center; margin-top: 20px; margin-bottom: 10px;">
-  <a href="https://www.arcgis.com/apps/instant/portfolio/index.html?appid=ff37f22b99c74d009e0882a2aff3149" target="_blank" style="background-color: #c0392b; color: white; padding: 12px 20px; border-radius: 6px; text-decoration: none; font-weight: bold;">
-    Accéder à la carte interactive
-  </a>
-</div>
+➡️ Voir la carte des [îlots de chaleur et de vulnérabilité en Île-de-France](https://www.arcgis.com/apps/instant/portfolio/index.html?appid=ff37f22b99c74d009e0882a2aff3149) réalisée par l’Institut Paris Region.
 
-<p style="font-size: 0.9em; color: #555; text-align: center;">
-  Source : Institut Paris Region. (2023). <i>Îlots de chaleur urbains et vulnérabilité en Île-de-France</i> [Carte interactive]. https://www.arcgis.com/apps/instant/portfolio/index.html?appid=ff37f22b99c74d009e0882a2aff3149
-</p>
 ---
 
 # ️ Carte interactive : végétation et occupation du sol
