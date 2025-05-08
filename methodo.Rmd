@@ -2,29 +2,6 @@
 output: html_document
 ---
 
-```{r carte-interactive, echo=FALSE, message=FALSE, warning=FALSE}
-library(sf)
-library(tmap)
-library(dplyr)
-
-tmap_mode("view")
-
-sol <- st_read("occupation-du-sol-en-5-postes-1994-mos-simplifie-saisi-au-150000-dile-de-france.geojson", quiet = TRUE)
-
-vege <- sol %>%
-  filter(codzon %in% c("2"))
-
-carte_vege <- tm_shape(vege) +
-  tm_fill( col = "darkgreen", alpha = 0.5, popup.vars = "codzon") +
-  tm_borders(col = "white", lwd = 0.2) +
-  tm_layout(
-    main.title = "Espaces végétalisés en Île-de-France",
-    main.title.size = 1.1,
-    legend.outside = TRUE
-  )
-
-tmap_save(carte_vege, filename = "docs/carte_vege.html", selfcontained = TRUE)
-```
 
 #  Objectif de l’étude
 

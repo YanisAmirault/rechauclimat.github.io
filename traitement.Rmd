@@ -1,29 +1,80 @@
 ---
 title: "traitement"
 output: html_document
-date: "2025-05-08"
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
 
-## R Markdown
+##  Objectif de l’analyse
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+Dans cette section, nous analysons de manière détaillée les trois communes sélectionnées.  
+Nous croisons trois dimensions spatiales :
+- la **végétation** (occupation du sol),
+- les **îlots de chaleur** (flux thermique),
+- et la **vulnérabilité sociale** (indices de sensibilité des populations).
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+---
+##  Clamart
 
-```{r cars}
-summary(cars)
-```
+<div style="text-align: center;">
+<iframe src="carte-clamart.html" width="100%" height="600px" style="border:none; border-radius: 10px; box-shadow: 0 0 6px rgba(0,0,0,0.1);"></iframe>
+</div>
 
-## Including Plots
+###  Analyse
 
-You can also embed plots, for example:
+Clamart présente une situation contrastée : le sud de la commune est très végétalisé, notamment avec la forêt de Meudon.  
+Cette zone bénéficie de températures modérées.  
+À l’inverse, le nord et le centre — plus denses — présentent des **îlots de chaleur marqués**, particulièrement en lien avec des zones peu végétalisées.  
+La vulnérabilité reste modérée mais concentrée dans certains secteurs urbanisés.
 
-```{r pressure, echo=FALSE}
-plot(pressure)
-```
+---
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+##  Gennevilliers
+
+<div style="text-align: center;">
+<iframe src="carte-gennevilliers.html" width="100%" height="600px" style="border:none; border-radius: 10px; box-shadow: 0 0 6px rgba(0,0,0,0.1);"></iframe>
+</div>
+
+###  Analyse
+
+Gennevilliers concentre les **facteurs de risque climatique** :  
+- Une très faible couverture végétale,
+- Une forte densité bâtie,
+- Des zones industrielles imperméabilisées.
+
+Les **flux de chaleur y sont intenses**, en particulier au centre.  
+La carte de vulnérabilité montre que les populations les plus fragiles se trouvent justement dans ces zones chaudes, posant un **problème d’exposition climatique aggravée**.
+
+---
+
+##  Le Châtelet-en-Brie
+
+<div style="text-align: center;">
+<iframe src="carte-chatelet.html" width="100%" height="600px" style="border:none; border-radius: 10px; box-shadow: 0 0 6px rgba(0,0,0,0.1);"></iframe>
+</div>
+
+###  Analyse
+
+Le Châtelet-en-Brie bénéficie d’un tissu urbain **peu dense et très végétalisé**.  
+Les températures sont modérées sur l’ensemble de la commune, avec très peu de zones d’accumulation thermique.  
+La **vulnérabilité sociale y est également faible** : on observe ici une **situation de résilience climatique naturelle**, du fait du cadre rural.
+
+---
+
+##  Synthèse comparative
+
+| Commune             | Végétation | Îlots de chaleur | Vulnérabilité sociale  | Risque global  |
+|---------------------|------------|------------------|------------------------|----------------|
+| Clamart             | Moyenne    | Localisés        | Modérée                | Modéré         |
+| Gennevilliers       | Faible     | Forts            | Élevée                 | Élevé          |
+| Le Châtelet-en-Brie | Forte      | Faibles          | Faible                 | Faible         |
+
+---
+
+##  Conclusion de l’analyse
+
+Cette étude confirme que la **végétation joue un rôle modérateur sur les températures locales**, mais que ce facteur seul ne suffit pas.  
+La **vulnérabilité des populations** est un facteur déterminant dans la gestion des risques liés aux îlots de chaleur.
+
+Les territoires cumulant densité, manque de végétation et fragilité sociale sont les plus exposés — comme c’est le cas à Gennevilliers.  
+À l’inverse, des communes rurales comme Le Châtelet-en-Brie bénéficient d’une protection naturelle mais posent la question de l’**accès aux services en période de crise**.
+

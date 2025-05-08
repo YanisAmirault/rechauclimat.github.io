@@ -9,7 +9,7 @@ navbar:
     - text: "Méthodologie"
       href: methodo.html
     - text: "Analyse"
-      href: analyse.html
+      href: traitement.html
     - text: "Conclusion"
       href: conclusion.html
       
