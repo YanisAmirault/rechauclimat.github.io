@@ -2,7 +2,6 @@
 title: "Analyse"
 output: html_document
 ---
-
 ```{r découpage des données, echo=FALSE, message=FALSE, warning=FALSE}
 library(sf)
 library(dplyr)
